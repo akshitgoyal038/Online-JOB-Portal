@@ -1,8 +1,16 @@
+import { useState } from "react";
+import Banner from "../components/Banner"
+
 
 
 const Home = () => {
+
+    const [query, setQuery] = useState("");
+    const handleInputChange = (e) => {
+      setQuery(e.target.value);
+    };
     return(
-        <div className="text-blue">Home Page</div>
+        <Banner query={query} handleInputChange={handleInputChange} />
     )
 }
 
